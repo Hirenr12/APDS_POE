@@ -1,0 +1,22 @@
+{
+  "name": "payment-portal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "express": "^4.21.0",
+    "express-brute": "^1.0.1",
+    "helmet": "^8.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.12.0"
+  }
+}
