@@ -8,7 +8,7 @@ import WelcomeScreen from './components/WelcomeScreen';
 import EmployeeLogin from './components/EmployeeLogin';
 import EmployeeMain from './components/EmployeeMain';
 import EmployeeRegister from './components/EmployeeRegister';
-
+import PaymentsDisplay from './components/PaymentsDisplay';
 
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
         <Route path="/employeelogin" element={<EmployeeLogin/>} />
         <Route path="/employeemain" element={<EmployeeMain/>} />
         <Route path="/employeeregister" element={<EmployeeRegister/>} />
+        <Route path="/paymentsdisplay" element={<PaymentsDisplay/>} />
         <Route path="login/" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/payments" element={<PaymentsPortal />} />

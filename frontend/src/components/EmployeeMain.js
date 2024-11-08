@@ -1,15 +1,21 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function EmployeeMain() {
-    const navigate = useNavigate();
-    
-    const handleRegCustomer =() => {
-        navigate('/register');
-    }
-    const handleRegEmployee =() => {
-        navigate('/employeeregister');
-    }
+  const navigate = useNavigate();
+  
+  const handleRegCustomer = () => {
+    navigate('/register');
+  };
+  
+  const handleRegEmployee = () => {
+    navigate('/employeeregister');
+  };
+  
+  const handleViewClientPayments = () => {
+    navigate('/paymentsdisplay');
+  };
+
   return (
     <div style={styles.container}>
       <h2>Welcome to the Employee Main Page</h2>
@@ -18,12 +24,18 @@ function EmployeeMain() {
           <h3>Register a Customer</h3>
           <button style={styles.button} onClick={handleRegCustomer}>
             Register Customer
-            </button>
+          </button>
         </div>
         <div style={styles.box}>
           <h3>Register an Employee</h3>
           <button style={styles.button} onClick={handleRegEmployee}>
             Register Employee
+          </button>
+        </div>
+        <div style={styles.box}>
+          <h3>View Client Payments</h3>
+          <button style={styles.button} onClick={handleViewClientPayments}>
+            View Payments
           </button>
         </div>
       </div>
