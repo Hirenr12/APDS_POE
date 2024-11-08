@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate from react-router-dom
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate(); 
 
-  //the regex patterns
+  // Regex patterns for validation
   const userNamePattern = /^[a-zA-Z0-9._-]+$/; 
-  const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/; // At least 5 characters, 1 letter, and 1 number
+  const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{5,}$/;
 
   const handleLogin = async (event) => {
     event.preventDefault();
 
-    //this is the validation for the regex
+    // Validation
     if (!userNamePattern.test(userName)) {
       alert('Invalid username. Only alphanumeric characters, dots, underscores, and dashes are allowed.');
       return;
@@ -25,7 +25,6 @@ function Login() {
     }
 
     try {
-      
       const response = await fetch('https://localhost/auth/login', { 
         method: 'POST',
         headers: {
@@ -37,16 +36,10 @@ function Login() {
       const data = await response.json();
 
       if (response.ok) {
-        //successful
         console.log('Login successful:');
-
-        //stores token
         localStorage.setItem('token', data.token);
-
-        //redirection
         navigate('/payments'); 
       } else {
-        //failed login attempt
         console.error(data.message || 'Login failed');
       }
     } catch (err) {
@@ -57,10 +50,10 @@ function Login() {
   return (
     <div style={styles.container}>
       <div style={styles.formWrapper}>
-        <h2>Login</h2>
+        <h2>Customer Login</h2>
         <form onSubmit={handleLogin} style={styles.form}>
           <div style={styles.inputGroup}>
-            <label>Username:</label> {/* Changed label to ID Number */}
+            <label>Username:</label>
             <input
               type="text"
               value={userName}
@@ -82,9 +75,8 @@ function Login() {
           <button type="submit" style={styles.button}>Login</button>
         </form>
         <p style={styles.link}>
-          No account? <Link to="/register" style={styles.linkText}>Register here</Link>
+          Not a customer? <Link to="/employeelogin" style={styles.linkText}>Go to Employee Login</Link>
         </p>
-      
       </div>
     </div>
   );
@@ -132,15 +124,6 @@ const styles = {
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
-  },
-  tempButton: {
-    padding: '10px',
-    backgroundColor: '#f44336', // Red background for the temp button
-    color: 'white',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    marginTop: '10px', // Add some space above the button
   },
   link: {
     marginTop: '20px',
