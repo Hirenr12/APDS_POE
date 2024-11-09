@@ -12,7 +12,7 @@ jobs:
   sonarqube:
     docker:
       - image: sonarsource/sonar-scanner-cli:latest
-    resource_class: small # <-- Move this out of the docker section
+    resource_class: small  # Correctly placed at the job level
     steps:
       - checkout
       - run: |
