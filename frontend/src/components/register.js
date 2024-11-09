@@ -43,6 +43,7 @@ function Register() {
     }
 
     const accountNumber = generateAccountNumber();
+    const role = "customer";
 
     const registrationData = {
       fullName,
@@ -50,6 +51,7 @@ function Register() {
       idNumber,
       accountNumber,
       password,
+      role,
     };
   
     try {

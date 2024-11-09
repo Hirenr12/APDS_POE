@@ -42,7 +42,9 @@ function EmployeeRegister() {
       return;
     }
 
+
     const accountNumber = generateAccountNumber();
+    const role = 'employee';
 
     const registrationData = {
       fullName,
@@ -50,10 +52,11 @@ function EmployeeRegister() {
       idNumber,
       accountNumber,
       password,
+      role,
     };
   
     try {
-      const response = await fetch('https://localhost/auth/employee/register', {
+      const response = await fetch('https://localhost/auth/register', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -65,7 +68,7 @@ function EmployeeRegister() {
       
       if (response.status === 201) {
         alert('Employee registration successful');
-        navigate('/employee-dashboard'); // Redirect to employee dashboard
+        navigate('/employeemain'); // Redirect to employee dashboard
       } else {
         alert(`Error: ${data.message}`);
       }

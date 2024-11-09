@@ -23,6 +23,11 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+ role: { 
+  type: String, 
+  enum: ['employee', 'customer'], 
+  required: true 
+  },
     paymentPortal: {
       amount: {
         type: String,
@@ -33,6 +38,10 @@ const userSchema = new mongoose.Schema({
         required: false,
       },
       provider: {
+        type: String,
+        required: false,
+      },
+      status: {
         type: String,
         required: false,
       },

@@ -24,7 +24,7 @@ function EmployeeLogin() {
     }
 
     try {
-      const response = await fetch('https://localhost/auth/employee-login', { 
+      const response = await fetch('https://localhost/auth/login', { 
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ function EmployeeLogin() {
       if (response.ok) {
         console.log('Employee login successful:');
         localStorage.setItem('token', data.token);
-        navigate('/dashboard');
+        navigate('/employeemain');
       } else {
         console.error(data.message || 'Login failed');
       }
