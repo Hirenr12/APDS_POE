@@ -52,4 +52,4 @@ workflows:
       - sonarqube
       - newmantest:
           requires:
-            - sonarqube  # This ensures newmantest runs only after sonarqube finishes successfully
+            - sonarqube
