@@ -37,6 +37,7 @@ jobs:
           name: Install Dependencies
           command: |
             cd backend
+            cd payment-portal
             npm install --verbose || { echo 'npm install failed'; exit 1; }
       - run:
           name: Run Newman Tests
