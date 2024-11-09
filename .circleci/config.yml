@@ -37,12 +37,12 @@ jobs:
           name: Install Dependencies
           command: |
             cd backend
-            npm install
+            npm install --verbose || { echo 'npm install failed'; exit 1; }
       - run:
           name: Run Newman Tests
           command: |
             cd backend/payment-portal/collection
-            newman run APDS_Collections.json
+            newman run APDS_Collections.json --reporters cli,junit --insecure || { echo 'Newman tests failed'; exit 1; }
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/workflows/ & https://circleci.com/docs/configuration-reference/#workflows
