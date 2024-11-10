@@ -1,12 +1,14 @@
 version: 2.1
 
 jobs:
+  # Simple "say-hello" job that echoes a message
   say-hello:
     docker:
       - image: circleci/python:3.8
     steps:
       - run: echo "Hello, world!"
 
+  # SonarQube analysis job
   sonarqube:
     docker:
       - image: sonarsource/sonar-scanner-cli:latest
@@ -24,6 +26,7 @@ jobs:
             -Dsonar.branch.name="$SONAR_BRANCH" \
             -Dsonar.sources="."
 
+  # Newman tests job
   newmantest:
     docker:
       - image: postman/newman:alpine
