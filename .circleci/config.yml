@@ -57,7 +57,7 @@ jobs:
             newman run APDS_Collections.json --reporters cli,junit --insecure \
               --env-var "MONGODB=$MONGODB" \
               --env-var "JWT_SECRET=$JWT_SECRET" \
-              --env-var "BASE_URL=http://localhost:3000" || { echo 'Newman tests failed'; exit 1; }
+              --env-var "BASE_URL=http://localhost" || { echo 'Newman tests failed'; exit 1; }
 
 workflows:
   version: 2
