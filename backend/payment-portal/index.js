@@ -7,6 +7,7 @@ const path = require('path');
 const https = require('https');
 const http = require('http'); // To handle HTTP requests
 const connectDB = require('./mdb'); // Database connection
+const morgan = require('morgan');
 
 const app = express();
 
@@ -20,10 +21,13 @@ const httpsOptions = {
   cert: sslCert,
 };
 
+
+
 // Connect to the database
 connectDB();
 
 // Middleware
+app.use(morgan('dev'));
 app.use(helmet()); // Adds security headers
 app.use(bodyParser.json()); // Parses JSON requests
 app.use(cors()); // Enables Cross-Origin Resource Sharing
