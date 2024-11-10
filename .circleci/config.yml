@@ -33,7 +33,7 @@ jobs:
         environment:
           MONGODB: $MONGODB
           JWT_SECRET: $JWT_SECRET
-          BASE_URL: "https://localhost:"  # Setting the base URL for the tests
+          BASE_URL: $BASE_URL  # Setting the base URL for the tests
       - image: node:18
     steps:
       - checkout
