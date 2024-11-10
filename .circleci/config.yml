@@ -46,7 +46,7 @@ jobs:
           name: Run Newman Tests
           command: |
             cd backend/payment-portal
-            npm run newman-test -- --baseUrl=$BASE_URL || { echo 'Newman tests failed'; exit 1; }
+            npm run newman-test || { echo 'Newman tests failed'; exit 1; }
 
 workflows:
   version: 2
