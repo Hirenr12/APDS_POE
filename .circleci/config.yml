@@ -29,11 +29,11 @@ jobs:
   # Newman tests job
   newmantest:
     docker:
-      - image: postman/newman:alpine
+      - image: node:18
         environment:
           MONGODB: $MONGODB
           JWT_SECRET: $JWT_SECRET
-      - image: node:18
+      - image: postman/newman:alpine
     steps:
       - checkout
       - run:
@@ -42,10 +42,22 @@ jobs:
             cd backend/payment-portal
             npm install --verbose || { echo 'npm install failed'; exit 1; }
       - run:
-          name: Run Newman Tests
+          name: Start Server
+          background: true
           command: |
             cd backend/payment-portal
-            npm run newman-test || { echo 'Newman tests failed'; exit 1; }
+            npm run start || { echo 'Server failed to start'; exit 1; }
+      - run:
+          name: Wait for Server to Start
+          command: sleep 10
+      - run:
+          name: Run Newman Tests
+          command: |
+            cd backend/payment-portal/collection
+            newman run APDS_Collections.json --reporters cli,junit --insecure \
+              --env-var "MONGODB=$MONGODB" \
+              --env-var "JWT_SECRET=$JWT_SECRET" \
+              --env-var "BASE_URL=http://localhost:3000" || { echo 'Newman tests failed'; exit 1; }
 
 workflows:
   version: 2
