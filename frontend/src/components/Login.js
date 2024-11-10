@@ -40,10 +40,10 @@ function Login() {
         localStorage.setItem('token', data.token);
   
         // Now navigate based on the role
-        if (data.role === 'employee') {
-          navigate('/employeemain');  // Navigate to Employee Main page
-        } else if (data.role === 'customer') {
+        if (data.role === 'customer') {
           navigate('/payments');  // Navigate to Customer Payments page
+        } else if (data.role === 'employee') {
+            // Add no employee sign up
         }
       } else {
         console.error(data.message || 'Login failed');

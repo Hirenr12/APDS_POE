@@ -12,17 +12,17 @@ function EmployeeLogin() {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-
+  
     if (!userNamePattern.test(userName)) {
       alert('Invalid username. Only alphanumeric characters, dots, underscores, and dashes are allowed.');
       return;
     }
-
+    
     if (!passwordPattern.test(password)) {
       alert('Invalid password. It must be at least 8 characters long and contain at least one letter and one number.');
       return;
     }
-
+  
     try {
       const response = await fetch('https://localhost/auth/login', { 
         method: 'POST',
@@ -33,21 +33,24 @@ function EmployeeLogin() {
       });
       
       const data = await response.json();
-
+  
       if (response.ok) {
-        console.log('Employee login successful:');
+        console.log('Login successful:', data);
+        // Store token first
         localStorage.setItem('token', data.token);
-        navigate('/employeemain');
+  
+        // Now navigate based on the role
+        if (data.role === 'employee') {
+          navigate('/employeemain');  // Navigate to Employee Main page
+        } else if (data.role === 'customer') {
+            // add no customer login
+        }
       } else {
         console.error(data.message || 'Login failed');
       }
     } catch (err) {
       console.error('Error during login:', err);
     }
-  };
-
-  const handleTempBypass = () => {
-    navigate('/employeemain'); // Redirect to EmployeeMain page
   };
 
   return (
@@ -77,7 +80,6 @@ function EmployeeLogin() {
           </div>
           <button type="submit" style={styles.button}>Login</button>
         </form>
-        <button onClick={handleTempBypass} style={styles.tempButton}>TempBypass</button>
         <p style={styles.link}>
           Not an employee? <Link to="/login" style={styles.linkText}>Go to Customer Login</Link>
         </p>
