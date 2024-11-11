@@ -68,7 +68,7 @@ function Register() {
       if (response.status === 201) {
         
         alert('Registration successful');
-        navigate('/');
+        navigate('/employeemain');
       } else {
         
         alert(`Error: ${data.message}`);

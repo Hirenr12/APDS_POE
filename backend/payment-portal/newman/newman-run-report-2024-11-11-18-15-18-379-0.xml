@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="APDS Collection" tests="2" time="0.229">
+  <testsuite name="Login Test" id="cc89cd01-38e6-4257-8dcc-64a891ccced6" timestamp="2024-11-11T18:15:17.968Z" tests="2" failures="0" errors="0" time="0.148">
+    <testcase name="Status code is 200" time="0.148" classname="LoginTest"/>
+    <testcase name="Response contains 'status' field with value 'success'" time="0.148" classname="LoginTest"/>
+  </testsuite>
+  <testsuite name="EmployeeLogin Test" id="e3e892ef-6b01-466e-afb6-8ef2ddacf047" timestamp="2024-11-11T18:15:17.968Z" tests="2" failures="0" errors="0" time="0.081">
+    <testcase name="Status code is 200" time="0.081" classname="EmployeeLoginTest"/>
+    <testcase name="Response contains 'status' field with value 'success'" time="0.081" classname="EmployeeLoginTest"/>
+  </testsuite>
+</testsuites>

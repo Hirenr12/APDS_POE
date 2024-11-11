@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="APDS Collection" tests="7" time="0.328">
+  <testsuite name="Login Test" id="d5d0f561-11be-4f5f-89fb-2913b5f1f999" timestamp="2024-11-11T18:03:20.154Z" tests="2" failures="0" errors="0" time="0.149">
+    <testcase name="Status code is 200" time="0.149" classname="LoginTest"/>
+    <testcase name="Response contains 'status' field with value 'success'" time="0.149" classname="LoginTest"/>
+  </testsuite>
+  <testsuite name="EmployeeLogin Test" id="f3c293c5-4660-4f83-9491-5a01e08ab5d9" timestamp="2024-11-11T18:03:20.154Z" tests="2" failures="0" errors="0" time="0.081">
+    <testcase name="Status code is 200" time="0.081" classname="EmployeeLoginTest"/>
+    <testcase name="Response contains 'status' field with value 'success'" time="0.081" classname="EmployeeLoginTest"/>
+  </testsuite>
+  <testsuite name="CustomerPayments" id="dd9b449b-13e1-429c-9f2c-d920d93170d4" timestamp="2024-11-11T18:03:20.154Z" tests="3" failures="2" errors="0" time="0.038">
+    <testcase name="Status code is 200" time="0.038" classname="CustomerPayments"/>
+    <testcase name="Response is in JSON format" time="0.038" classname="CustomerPayments"/>
+    <testcase name="Customers data is returned" time="0.038" classname="CustomerPayments">
+      <failure type="AssertionFailure" message="expected '1000' to be a number">
+        <![CDATA[Failed 2 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: CustomerPayments.]]>
+        <![CDATA[Test description: Customers data is returned.]]>
+        <![CDATA[Error message: expected '1000' to be a number.]]>
+        <![CDATA[Stacktrace: AssertionError: expected '1000' to be a number
+   at Object.eval sandbox-script.js:3:3).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="ReigsterCustomer" id="ec1e03bb-1763-474b-88c3-9d44ba3009e4" timestamp="2024-11-11T18:03:20.154Z" tests="2" failures="4" errors="0" time="0.003">
+    <testcase name="Status code is 201" time="0.003" classname="ReigsterCustomer">
+      <failure type="AssertionFailure" message="expected response to have status code 201 but got 429">
+        <![CDATA[Failed 2 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: ReigsterCustomer.]]>
+        <![CDATA[Test description: Status code is 201.]]>
+        <![CDATA[Error message: expected response to have status code 201 but got 429.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 201 but got 429
+   at Object.eval sandbox-script.js:1:4).]]>
+      </failure>
+    </testcase>
+    <testcase name="User registration success message" time="0.003" classname="ReigsterCustomer">
+      <failure type="AssertionFailure" message="expected undefined to deeply equal 'success'">
+        <![CDATA[Failed 2 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: ReigsterCustomer.]]>
+        <![CDATA[Test description: User registration success message.]]>
+        <![CDATA[Error message: expected undefined to deeply equal 'success'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected undefined to deeply equal 'success'
+   at Object.eval sandbox-script.js:2:4).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="payments test" id="120ed263-fb26-4359-9c78-43096e1528b5" timestamp="2024-11-11T18:03:20.154Z" tests="3" failures="4" errors="0" time="0.002">
+    <testcase name="Payment details updated successfully" time="0.002" classname="PaymentsTest">
+      <failure type="AssertionFailure" message="expected response to have status code 200 but got 401">
+        <![CDATA[Failed 2 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: payments test.]]>
+        <![CDATA[Test description: Payment details updated successfully.]]>
+        <![CDATA[Error message: expected response to have status code 200 but got 401.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 200 but got 401
+   at Object.eval sandbox-script.js:1:5).]]>
+      </failure>
+    </testcase>
+    <testcase name="Payment details are correctly saved" time="0.002" classname="PaymentsTest">
+      <failure type="AssertionFailure" message="expected { Object (message) } to have property 'success'">
+        <![CDATA[Failed 2 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: payments test.]]>
+        <![CDATA[Test description: Payment details are correctly saved.]]>
+        <![CDATA[Error message: expected { Object (message) } to have property 'success'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (message) } to have property 'success'
+   at Object.eval sandbox-script.js:2:5).]]>
+      </failure>
+    </testcase>
+    <testcase name="User ID is valid" time="0.002" classname="PaymentsTest"/>
+  </testsuite>
+  <testsuite name="RegisterEmployee" id="5c33ccdb-4f9e-412d-8831-7192a1790af5" timestamp="2024-11-11T18:03:20.154Z" tests="2" failures="4" errors="0" time="0.004">
+    <testcase name="Status code is 201" time="0.004" classname="RegisterEmployee">
+      <failure type="AssertionFailure" message="expected response to have status code 201 but got 400">
+        <![CDATA[Failed 2 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: RegisterEmployee.]]>
+        <![CDATA[Test description: Status code is 201.]]>
+        <![CDATA[Error message: expected response to have status code 201 but got 400.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 201 but got 400
+   at Object.eval sandbox-script.js:1:6).]]>
+      </failure>
+    </testcase>
+    <testcase name="User registration success message" time="0.004" classname="RegisterEmployee">
+      <failure type="AssertionFailure" message="Unexpected token '&lt;' at 1:1&#xA;&lt;!DOCTYPE html>&#xA;^">
+        <![CDATA[Failed 2 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: RegisterEmployee.]]>
+        <![CDATA[Test description: User registration success message.]]>
+        <![CDATA[Error message: Unexpected token '<' at 1:1
+<!DOCTYPE html>
+^.]]>
+        <![CDATA[Stacktrace: JSONError: Unexpected token '<' at 1:1
+<!DOCTYPE html>
+^
+   at Object.eval sandbox-script.js:2:6).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="account details" id="0b5ce6fd-2688-4945-b784-e8768e82bc6a" timestamp="2024-11-11T18:03:20.154Z" tests="3" failures="6" errors="0" time="0.002">
+    <testcase name="Account details updated successfully" time="0.002" classname="AccountDetails">
+      <failure type="AssertionFailure" message="expected response to have status code 200 but got 401">
+        <![CDATA[Failed 2 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: account details.]]>
+        <![CDATA[Test description: Account details updated successfully.]]>
+        <![CDATA[Error message: expected response to have status code 200 but got 401.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 200 but got 401
+   at Object.eval sandbox-script.js:1:7).]]>
+      </failure>
+    </testcase>
+    <testcase name="Account details are correctly saved" time="0.002" classname="AccountDetails">
+      <failure type="AssertionFailure" message="expected { Object (message) } to have property 'success'">
+        <![CDATA[Failed 2 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: account details.]]>
+        <![CDATA[Test description: Account details are correctly saved.]]>
+        <![CDATA[Error message: expected { Object (message) } to have property 'success'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected { Object (message) } to have property 'success'
+   at Object.eval sandbox-script.js:2:7).]]>
+      </failure>
+    </testcase>
+    <testcase name="User ID is valid" time="0.002" classname="AccountDetails">
+      <failure type="AssertionFailure" message="Cannot read properties of undefined (reading 'id')">
+        <![CDATA[Failed 2 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: account details.]]>
+        <![CDATA[Test description: User ID is valid.]]>
+        <![CDATA[Error message: Cannot read properties of undefined (reading 'id').]]>
+        <![CDATA[Stacktrace: TypeError: Cannot read properties of undefined (reading 'id')
+   at Object.eval sandbox-script.js:3:7).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>

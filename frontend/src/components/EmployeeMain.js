@@ -16,8 +16,16 @@ function EmployeeMain() {
     navigate('/paymentsdisplay');
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('token'); // Clear the token
+    navigate('/'); // go back to the login page
+  };
+
   return (
     <div style={styles.container}>
+      {/* Logout button positioned in the top right corner */}
+      <button onClick={handleLogout} style={styles.tempButton}>Logout</button>
+      
       <h2>Welcome to the Employee Main Page</h2>
       <div style={styles.boxContainer}>
         <div style={styles.box}>
@@ -53,6 +61,18 @@ const styles = {
     textAlign: 'center',
     backgroundColor: '#f0f0f0',
     padding: '20px',
+    position: 'relative', // Important for absolute positioning of the logout button
+  },
+  tempButton: {
+    position: 'absolute', // Position it at the top right
+    top: '20px', // Adjust top distance
+    right: '20px', // Adjust right distance
+    padding: '10px 20px',
+    backgroundColor: '#f44336',
+    color: 'white',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
   },
   boxContainer: {
     display: 'flex',

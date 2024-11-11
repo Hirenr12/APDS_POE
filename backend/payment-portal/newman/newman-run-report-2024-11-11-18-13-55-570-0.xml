@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="APDS Collection" tests="3" time="0.140">
+  <testsuite name="Login Test" id="00265ba2-0376-453c-9f45-1a6e6b74de03" timestamp="2024-11-11T18:13:55.169Z" tests="2" failures="0" errors="0" time="0.130">
+    <testcase name="Status code is 200" time="0.130" classname="LoginTest"/>
+    <testcase name="Response contains 'status' field with value 'success'" time="0.130" classname="LoginTest"/>
+  </testsuite>
+  <testsuite name="EmployeeLogin Test" id="f17796f0-5a8a-437e-a47e-ae25dbd48905" timestamp="2024-11-11T18:13:55.169Z" tests="2" failures="2" errors="0" time="0.004">
+    <testcase name="Status code is 200" time="0.004" classname="EmployeeLoginTest">
+      <failure type="AssertionFailure" message="expected response to have status code 200 but got 429">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: EmployeeLogin Test.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected response to have status code 200 but got 429.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 200 but got 429
+   at Object.eval sandbox-script.js:1:2).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response contains 'status' field with value 'success'" time="0.004" classname="EmployeeLoginTest">
+      <failure type="AssertionFailure" message="expected undefined to deeply equal 'success'">
+        <![CDATA[Failed 1 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: EmployeeLogin Test.]]>
+        <![CDATA[Test description: Response contains 'status' field with value 'success'.]]>
+        <![CDATA[Error message: expected undefined to deeply equal 'success'.]]>
+        <![CDATA[Stacktrace: AssertionError: expected undefined to deeply equal 'success'
+   at Object.eval sandbox-script.js:2:2).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+  <testsuite name="CustomerPayments" id="d401f027-82f1-4f05-a128-8c3903c7ff31" timestamp="2024-11-11T18:13:55.169Z" tests="3" failures="4" errors="0" time="0.003">
+    <testcase name="Status code is 200" time="0.003" classname="CustomerPayments">
+      <failure type="AssertionFailure" message="expected response to have status code 200 but got 401">
+        <![CDATA[Failed 2 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: CustomerPayments.]]>
+        <![CDATA[Test description: Status code is 200.]]>
+        <![CDATA[Error message: expected response to have status code 200 but got 401.]]>
+        <![CDATA[Stacktrace: AssertionError: expected response to have status code 200 but got 401
+   at Object.eval sandbox-script.js:1:3).]]>
+      </failure>
+    </testcase>
+    <testcase name="Response is in JSON format" time="0.003" classname="CustomerPayments"/>
+    <testcase name="Customers data is returned" time="0.003" classname="CustomerPayments">
+      <failure type="AssertionFailure" message="expected undefined to deeply equal true">
+        <![CDATA[Failed 2 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: CustomerPayments.]]>
+        <![CDATA[Test description: Customers data is returned.]]>
+        <![CDATA[Error message: expected undefined to deeply equal true.]]>
+        <![CDATA[Stacktrace: AssertionError: expected undefined to deeply equal true
+   at Object.eval sandbox-script.js:3:3).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>

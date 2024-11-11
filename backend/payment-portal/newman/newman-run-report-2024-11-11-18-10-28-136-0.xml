@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="APDS Collection" tests="3" time="0.311">
+  <testsuite name="Login Test" id="7060c60b-0a1f-4fdb-bc2a-33d85ab5ba16" timestamp="2024-11-11T18:10:27.505Z" tests="2" failures="0" errors="0" time="0.147">
+    <testcase name="Status code is 200" time="0.147" classname="LoginTest"/>
+    <testcase name="Response contains 'status' field with value 'success'" time="0.147" classname="LoginTest"/>
+  </testsuite>
+  <testsuite name="EmployeeLogin Test" id="b3bee9f1-c286-44fe-948a-0df1335c691b" timestamp="2024-11-11T18:10:27.505Z" tests="2" failures="0" errors="0" time="0.084">
+    <testcase name="Status code is 200" time="0.084" classname="EmployeeLoginTest"/>
+    <testcase name="Response contains 'status' field with value 'success'" time="0.084" classname="EmployeeLoginTest"/>
+  </testsuite>
+  <testsuite name="CustomerPayments" id="48d8fe1e-c37d-4e30-ab95-66c5e1917a32" timestamp="2024-11-11T18:10:27.505Z" tests="3" failures="2" errors="0" time="0.040">
+    <testcase name="Status code is 200" time="0.040" classname="CustomerPayments"/>
+    <testcase name="Response is in JSON format" time="0.040" classname="CustomerPayments"/>
+    <testcase name="Customers data is returned" time="0.040" classname="CustomerPayments">
+      <failure type="AssertionFailure" message="expected '1000' to be a number">
+        <![CDATA[Failed 2 times.]]>
+        <![CDATA[Collection JSON ID: 2f76701c-b13d-488f-a84b-52315d8481a3.]]>
+        <![CDATA[Collection name: APDS Collection.]]>
+        <![CDATA[Request name: CustomerPayments.]]>
+        <![CDATA[Test description: Customers data is returned.]]>
+        <![CDATA[Error message: expected '1000' to be a number.]]>
+        <![CDATA[Stacktrace: AssertionError: expected '1000' to be a number
+   at Object.eval sandbox-script.js:3:3).]]>
+      </failure>
+    </testcase>
+  </testsuite>
+</testsuites>

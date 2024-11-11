@@ -43,7 +43,7 @@ function EmployeeLogin() {
         if (data.role === 'employee') {
           navigate('/employeemain');  // Navigate to Employee Main page
         } else if (data.role === 'customer') {
-            // add no customer login
+          alert(`Error: You May not sign in here with a customer account`);
         }
       } else {
         console.error(data.message || 'Login failed');
